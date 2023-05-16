@@ -1,0 +1,25 @@
+@WebServlet("/register")
+public class VoterRegistrationServlet extends HttpServlet {
+
+    private VoterDAO voterDAO;
+
+    @Override
+    public void init() throws ServletException {
+        super.init();
+        // Initialize the voterDAO instance using a DAO factory or dependency injection
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String name = req.getParameter("name");
+        int age = Integer.parseInt(req.getParameter("age"));
+        String gender = req.getParameter("gender");
+        String address = req.getParameter("address");
+        String phone = req.getParameter("phone");
+
+        Voter voter = new Voter(name, age, gender, address, phone);
+        voterDAO.save(voter); // Save the voter to the database
+
+        resp.sendRedirect("/success.html"); // Redirect to a success page
+    }
+}
