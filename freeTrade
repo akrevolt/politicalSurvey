@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class FreeTradeAgreementsSurvey {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Welcome to the Free Trade Agreements Survey!");
+        System.out.println("Please answer the following question:");
+        System.out.println("What is your opinion on free trade agreements?");
+        System.out.println("1. I support them");
+        System.out.println("2. I am against them");
+        System.out.println("3. I am neutral on the issue");
+
+        int response = scanner.nextInt();
+
+        switch (response) {
+            case 1:
+                System.out.println("You chose: I support free trade agreements");
+                break;
+            case 2:
+                System.out.println("You chose: I am against free trade agreements");
+                break;
+            case 3:
+                System.out.println("You chose: I am neutral on the issue");
+                break;
+            default:
+                System.out.println("Invalid response. Please choose a number from 1 to 3.");
+        }
+
+        scanner.close();
+    }
+}
