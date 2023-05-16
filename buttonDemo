@@ -1,0 +1,20 @@
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class ButtonDemo {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Button Demo");
+        JPanel panel = new JPanel();
+        JButton button = new JButton("Click me!");
+        
+        // Customize the button's appearance and behavior
+        button.setToolTipText("Press this button to perform an action");
+        button.addActionListener(e -> System.out.println("Button clicked!"));
+        
+        panel.add(button);
+        frame.add(panel);
+        frame.pack();
+        frame.setVisible(true);
+    }
+}
