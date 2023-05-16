@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class EconomicPolicySurvey {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Welcome to the Economic Policy Survey!");
+        System.out.println("Please answer the following question:");
+        System.out.println("Which of the following economic policies do you support the most?");
+        System.out.println("1. Increasing taxes on the wealthy");
+        System.out.println("2. Decreasing taxes on businesses");
+        System.out.println("3. Expanding social welfare programs");
+        System.out.println("4. Reducing government regulations on businesses");
+        System.out.println("5. Other (please specify)");
+
+        int response = scanner.nextInt();
+
+        switch (response) {
+            case 1:
+                System.out.println("You chose: Increasing taxes on the wealthy");
+                break;
+            case 2:
+                System.out.println("You chose: Decreasing taxes on businesses");
+                break;
+            case 3:
+                System.out.println("You chose: Expanding social welfare programs");
+                break;
+            case 4:
+                System.out.println("You chose: Reducing government regulations on businesses");
+                break;
+            case 5:
+                System.out.println("Please specify your choice:");
+                scanner.nextLine(); // consume the previous newline character
+                String other = scanner.nextLine();
+                System.out.println("You chose: " + other);
+                break;
+            default:
+                System.out.println("Invalid response. Please choose a number from 1 to 5.");
+        }
+
+        scanner.close();
+    }
+}
