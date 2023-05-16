@@ -1,0 +1,35 @@
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class SocialIssuesSurvey {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Social Issues Survey");
+        JPanel panel = new JPanel();
+        JLabel question = new JLabel("Which of the following social issues is the most important to you?");
+        JButton abortionButton = new JButton("Abortion rights");
+        JButton lgbtqButton = new JButton("LGBTQ+ rights");
+        JButton gunButton = new JButton("Gun control");
+        JButton immigrationButton = new JButton("Immigration");
+        JButton otherButton = new JButton("Other");
+
+        // Add action listeners to the buttons
+        abortionButton.addActionListener(e -> System.out.println("Abortion rights"));
+        lgbtqButton.addActionListener(e -> System.out.println("LGBTQ+ rights"));
+        gunButton.addActionListener(e -> System.out.println("Gun control"));
+        immigrationButton.addActionListener(e -> System.out.println("Immigration"));
+        otherButton.addActionListener(e -> System.out.println("Other"));
+
+        panel.add(question);
+        panel.add(abortionButton);
+        panel.add(lgbtqButton);
+        panel.add(gunButton);
+        panel.add(immigrationButton);
+        panel.add(otherButton);
+
+        frame.add(panel);
+        frame.pack();
+        frame.setVisible(true);
+    }
+}
